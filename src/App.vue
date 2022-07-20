@@ -1,11 +1,11 @@
 <template>
   <div class="app" @touchmove.prevent>
-    <oneVue></oneVue>
+    <First></First>
   </div>
 </template>
 <script setup lang="ts">
 import { onMounted,ref} from 'vue';
-import oneVue from './components/one.vue'
+import First from './components/first.vue'
 </script>
 
 <style lang="scss">
