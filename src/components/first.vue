@@ -8,7 +8,6 @@ import plane from '../script/basic/plane'
 let cube:THREE.Mesh
 onMounted(()=>{
   let cw = createWorld('.one',true)
-
   if (!cw) return
   // 将立方体到场景中
   plane.rotation.x = Math.PI * -.5

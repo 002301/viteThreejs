@@ -3,7 +3,7 @@ import * as THREE from "three";
 import texture from './texture'
 
 const planeGeo = new THREE.PlaneGeometry(10, 10);
-const planeMat = new THREE.MeshPhongMaterial({
+const planeMat = new THREE.MeshBasicMaterial({
   map: texture,
   side: THREE.DoubleSide,
 });

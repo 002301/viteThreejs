@@ -7,6 +7,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
  * import { THREE, scene, camera, renderer, createWorld } from '../script/createWorld'
  * 
  * createWorld(dom,true)
+ * renderer.setAnimationLoop(()=>{
+ *    update()
+ *     renderer.render(scene, camera);
+  })
  */
 
 // 初始化场景
@@ -33,6 +37,7 @@ export function createWorld(dom:string, debug:boolean) {
   camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
   addLight()
   renderer = new THREE.WebGLRenderer({antialias: true })
+  renderer.shadowMap.enabled = true;
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setSize(WIDTH, HEIGHT)
   // 配置渲染器清除颜色
@@ -42,6 +47,7 @@ export function createWorld(dom:string, debug:boolean) {
   renderer.setSize(width, height)
   
   camera.position.set(0, 1, 5)
+  camera.lookAt(new THREE.Vector3(0,0,0))
   renderer.render(scene, camera);
   // parent.setAttribute('style','width:100%;height:100%;')
   if (debug){
@@ -59,5 +65,5 @@ const debugInit = () => {
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.addEventListener("change", () => {
     renderer.render(scene, camera);
-  }); //监听鼠标、键盘事件
+  }); 
 }
