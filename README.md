@@ -1,3 +1,5 @@
+ demo:https://002301.github.io/viteThreejs/
+ 
 #### vue3架构下Three练习
 
 ```js
