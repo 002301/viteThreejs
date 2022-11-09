@@ -130,6 +130,7 @@ const bullet = (event)=>{
   }
   render()
 }
+
 </script>
 
 <style lang="scss" scoped>
